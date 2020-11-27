@@ -8,8 +8,9 @@ if (mysqli_connect_errno($conn))
 }
 
 
-$name = $_POST['name'];
-$comment = $_POST['comment'];
+$product = $_POST['Product'];
+$price = $_POST['Price'];
+$amount = $_POST['amount'];
 
 
 $sql = "UPDATE guestbook SET Comment='$comment' WHERE Name='$name' ";
