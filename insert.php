@@ -15,7 +15,7 @@
 
     <div class="container">
         <h2>Add values</h2>
-        <form action="insert.php" method="post" >
+        <form action="show.php" method="post" >
             <div class="form-group">
                 ชื่อสินค้า
                 <input type="text" class="form-control"  name="Product" placeholder="Enter Product"> <br>
