@@ -1,26 +1,42 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-$conn = mysqli_init();
-mysqli_real_connect($conn, 'pornpaisan112.mysql.database.azure.com', 'pps112@pornpaisan112', 'Pornpaisan112', 'examelab', 3306);
-if (mysqli_connect_errno($conn))
-{
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
+<head>
+    <title>Add values</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 
+<body>
 
-$product = $_POST['ชื่อสินค้า'];
-$price = $_POST['ราคาต่อหน่วย'];
-$amount = $_POST['จำนวน'];
+    <div class="container">
+        <h2>Add values</h2>
+        <form action="insert.php" method="post" >
+            <div class="form-group">
+                ชื่อสินค้า
+                <input type="text" class="form-control"  name="Product" placeholder="Enter Product"> <br>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="Price">ราคาต่อหน่วย:</label>
+                    <input type="text" class="form-control" name="Price" placeholder="Enter Number"> <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    จำนวน
+                    <input type="text" class="form-control" name="Amout" placeholder="Enter Number"> <br>
+                </div>
+            </div>
+            <input type="submit" id="commentBtn" class="btn btn-primary">
+            <a href="showtest.php" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
 
+</body>
 
-$sql = "INSERT INTO ExameLAB (Product , Price , Amount) VALUES ('$product', '$price', '$amount')";
-
-
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  }
-  
-mysqli_close($conn);
-?>
+</html>
